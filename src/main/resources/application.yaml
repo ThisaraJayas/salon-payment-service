@@ -1,0 +1,25 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: payment-service
+  data:
+    mongodb:
+      uri: mongodb+srv://mayanioinfo_db_user:Sms25BMt6n8qcj4d@cluster0.nhbeekm.mongodb.net/?appName=Cluster0
+
+lemon:
+  squeezy:
+    api-key: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NGQ1OWNlZi1kYmI4LTRlYTUtYjE3OC1kMjU0MGZjZDY5MTkiLCJqdGkiOiIxZGZiYTUxYTNhNjM5NGE2ZGMwNWViZmNiYTE4OWExZjc0ODVkNTQxNjUyZTIxN2YyMTgxNTVjMzhhOGQ4M2JjY2U1NTIwZjA5ZDgzYjU2MCIsImlhdCI6MTc3MzY1MjQwOC42MTU1MywibmJmIjoxNzczNjUyNDA4LjYxNTUzMywiZXhwIjoxNzg5NTE2ODAwLjAzOTEzNSwic3ViIjoiNTgwNjgwOSIsInNjb3BlcyI6W119.kgrT36G7MT4U1e1p2OV3iG9DC4dAT7JMdVN3DYnJhiDTzN6c07SOQhPFYkig9b9yr3xSgl0GLjKCYDeoO9hmKDPMhL47CqwUeqdVMuv5iQrouY50_MDD1klH0heQGLSlSWf1E_9_G1mSbtEWKaaqpUxTCu5Iyv745hd3BiZ0mMR2kA9yU0yiIZuKj7XUuYl9k7BaG4EOuSUVRYR7a_p8D2USOQ3l5dEvT3_OvFHTXoPnowcT_v4LY4pTJ6c_jx0INItYl2DK3XvOiHuskGUC52iFKzDEggEY5aNVRnQMxGF8lbXvDUT44nGusW76nazIdtPfXsd6v-SYk549sXs7ENKlmSuZWCEQOacPvI3G4SSXLybRBDN7kVBFst77lauB1_DkdZOBRW3MtxdQBPZatNT_-3H8PeynIhtZWHiCs4jcaLd0TjyH20RWJ9chI8qVHpeZZ8aAAVs2xAMhlL1cHerJ5xIs26MsadVZlaQuOAJ7oKAmDyPx69SRu47Oy8PWNUskz_o67BQnCLFTlHPq1o_I_UnJnFq0SieB6P83O_GFQgtOVEjl4BhKHjsA46PnHxSk3Yf63RGms3IMPhakfgJQBz70N1VfzGzp04YoviUIXbu_GgKMmMh86Z8w2Rq2m5gxtHn-rUPIg-sdqiHDj9y4-5CNeAU4Rx5MbTEkauI
+    store-id: 260476
+    webhook-secret: YOUR_WEBHOOK_SECRET
+    checkout-url: https://api.lemonsqueezy.com/v1/checkouts
+
+booking:
+  service:
+    url: http://localhost:5002
+
+logging:
+  level:
+    com.salon.payment: DEBUG
+    org.springframework.web: INFO
