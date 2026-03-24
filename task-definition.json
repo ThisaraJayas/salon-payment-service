@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "payment-service-container",
-      "image": "placeholder",  // Will be replaced by GitHub Action
+      "image": "placeholder",
       "portMappings": [
         {
           "containerPort": 5003,
