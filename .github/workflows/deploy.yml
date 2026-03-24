@@ -1,4 +1,4 @@
-name: CI/CD to AWS ECR and ECS
+name: Deploy Payment Service to ECS
 
 on:
   push:
@@ -45,7 +45,6 @@ jobs:
         docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
-        # Pass the image URI to the next step
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
     - name: Fill in the new image ID in the Amazon ECS task definition
@@ -53,13 +52,13 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
-        container-name: "payment-service-container"  # From your task definition
+        container-name: "payment-service-container"
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v2
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: "payment-service"  # Your ECS service name
+        service: "payment-service" # Replace with your actual ECS Service name
         cluster: "payment-cluster"
         wait-for-service-stability: true
