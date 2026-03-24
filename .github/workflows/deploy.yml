@@ -62,4 +62,3 @@ jobs:
         service: "payment-service" # Replace with your actual ECS Service name
         cluster: "payment-cluster"
         wait-for-service-stability: true
-
