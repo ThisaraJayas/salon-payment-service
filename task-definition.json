@@ -1,0 +1,31 @@
+{
+  "family": "payment-service-task",
+  "containerDefinitions": [
+    {
+      "name": "payment-service-container",
+      "image": "placeholder",
+      "portMappings": [
+        {
+          "containerPort": 5003,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/payment-service",
+          "awslogs-region": "eu-north-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "executionRoleArn": "arn:aws:iam::232939969536:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512"
+}
